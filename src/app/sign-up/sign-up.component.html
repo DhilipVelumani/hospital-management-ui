@@ -1,0 +1,82 @@
+
+  
+<div class="container signup-container" Style="background-image:url(assets/images/home.jpg)">
+<p>
+  sign-up works!
+</p>
+    <div class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Success!</strong> User created successfully!!.
+    </div>
+    <div class="alert alert-danger alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Danger!</strong> Please review invalid fields!
+    </div>
+    <div class="alert alert-warning alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Warning!</strong> <span class="message"></span>
+    </div>
+
+  <div>
+    
+    <form  #RegisterForm="ngForm">
+      <div class="form-group">
+        <label for="firstName">firstName</label>
+        <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.firstName" name="firstName">
+          <label class="err-msg text-danger firstName-error-msg" ></label>
+      </div>
+
+       <div class="form-group">
+        <label for="lastName">lastName</label>
+        <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.lastName" name="lastName">
+         <label class="err-msg text-danger lastName-error-msg" ></label>
+      </div>
+ 
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+         <label class="err-msg text-danger email-error-msg" ></label>
+       
+      </div>
+ 
+      <div class="form-group">
+        <label for="MobileNumber">MobileNumber</label>
+        <input type="number" class="form-control" id="MobileNumber" required [(ngModel)]="user.mobNum" name="mobNum">
+         <label class="err-msg text-danger MobileNumber-error-msg" ></label>
+       
+      </div>
+ 
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password">
+         <label class="err-msg text-danger password-error-msg" ></label>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label><br/>
+        <label for="Male">Male</label>
+        <input type="radio" class=""  id="Male" name="gender" 
+        required [(ngModel)]="user.gender"value="male" checked/><br>
+
+        <label for="Female">Female</label>
+        <input type="radio" class=""  id="Female" 
+        name="gender"required  [(ngModel)]="user.gender"value="female"/><br>
+     <label class="err-msg text-danger gender-error-msg" ></label>  </div>
+ 
+   <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control" id="dob" required [(ngModel)]="user.dob" name="dob">
+         <label class="err-msg text-danger dob-error-msg" ></label>
+      </div>
+
+
+      <div>{{RegisterForm.valid}}</div>
+      <div>{{RegisterForm.invalid}}</div>
+      <button type="submit"  class="btn btn-primary" (click)="signUpUser(RegisterForm);" [disabled]="RegisterForm.invalid">submit</button>
+    </form>
+  </div>
+</div>
+ 
+  
